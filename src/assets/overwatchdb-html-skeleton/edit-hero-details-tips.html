@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Overwatch Database</title>
+    <link rel="stylesheet"
+          href="https://overwatch-a.akamaihd.net/blizzard-d101f2900963da68c7204b467eedf16df4ff77c7f3104d43905d50ba470760841cd89cdcbc79e083d9a3deeabb42c40561b56387fd2767af99f1777395fa3e52.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://overwatch-a.akamaihd.net/app-e7b53ef48c085f064d58aaefb9933da5fcad25c5c4bdf116bcbda165ea23715fbe0ab0e2098e20e538a51507d4bfeb955d2daa1c6c79541184db8796cb0b8efa.css"
+          type="text/css">
+    <link rel="stylesheet" href="css/changed-blizz-styles.css" type="text/css">
+</head>
+<body class="Theme--overwatch">
+<div class="navbars" style="top: 0px;">
+    <nav role="main" class="is-expanded is-submenu-open is-search-open">
+        <div class="nav-section">
+            <a href="./index.html" class="nav-logo"></a>
+        </div>
+        <div class="nav-section">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-btn m-has-children">My Overwatch</a>
+                    <ul class="nav-menu m-sub-menu" style="margin-left: 225px;">
+                        <li><a href="#" class="nav-btn m-highlight">My profile</a></li>
+                        <li><a href="#" class="nav-btn m-highlight">My replays</a></li>
+                        <li><a href="#" class="nav-btn m-highlight">My stats</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="nav-btn">Heroes</a>
+                </li>
+                <li><a href="#" class="nav-btn m-has-children">Communities</a>
+                    <ul class="nav-menu m-sub-menu" style="margin-left: 460px;">
+                        <li><a href="#" class="nav-btn m-highlight">Forum</a></li>
+                        <li><a href="#" class="nav-btn m-highlight">Official forum</a></li>
+                        <li><a href="#" class="nav-btn m-highlight">Reddit</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="nav-btn m-has-children">Administration</a>
+                    <ul class="nav-menu m-sub-menu" style="margin-left: 600px;">
+                        <li><a href="#" class="nav-btn m-highlight">Edit Heroes</a></li>
+                        <li><a href="#" class="nav-btn m-highlight">Edit Users</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section m-right">
+            <div class="nav-search-bar u-inline-block m-desktop-only">
+                <svg viewBox="0 0 32 32" class="icon nav-search-icon u-inline-block">
+                    <path class="cls-1"
+                          d="M3.425,31.747l9.192-9.169a12.006,12.006,0,0,0,7,2.177,12.136,12.136,0,0,0,4.8-.974A12.095,12.095,0,0,0,30.993,17.2a12.328,12.328,0,0,0,0-9.6,12.107,12.107,0,0,0-6.578-6.583,12.3,12.3,0,0,0-9.6,0A12.118,12.118,0,0,0,8.24,7.594a12.163,12.163,0,0,0-.973,4.8,12.023,12.023,0,0,0,2.176,7L0.253,28.583a0.726,0.726,0,0,0,0,1.028L2.4,31.748A0.725,0.725,0,0,0,3.425,31.747Zm9.357-12.535A9.135,9.135,0,0,1,9.992,12.5,9.135,9.135,0,0,1,12.782,5.8a9.148,9.148,0,0,1,6.711-2.787A9.149,9.149,0,0,1,26.2,5.8,9.139,9.139,0,0,1,28.992,12.5,9.14,9.14,0,0,1,26.2,19.212,9.153,9.153,0,0,1,19.492,22,9.152,9.152,0,0,1,12.782,19.212Z"></path>
+                </svg>
+                <form id="player-search" class="nav-search-form nav-search-mobile u-inline-block">
+                    <input name="q" placeholder="Player battletag" class="nav-search-field" type="text">
+                </form>
+            </div>
+            <a href="#" class="nav-btn u-inline-block">Login</a>
+            <div class="nav-btn u-inline-block">
+                <a href="#"
+                   class="btn m-sm m-light-text nav-buy-btn">Register</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<br>
+<br>
+<br>
+<section class="u-align-center">
+</section>
+<section class="hero-detail section-divider m-top-only u-full-width-container">
+    <div class="u-max-width-container pad-0 pad-30@lg-min pad-only-sides">
+        <div class="row hero-detail-tabs">
+            <div id="tabs" class="column sm-12">
+                <ul id="details-tabs" role="tablist" class="tabs">
+                    <li role="presentation" class="tabs-title" style="width: 33.3%">
+                        <a href="edit-hero-details-overview.html" aria-selected="false"
+                           class="u-uppercase" role="tab"
+                           aria-controls="overview">Overview</a>
+                    </li>
+                    <li role="presentation" class="tabs-title" style="width: 33.3%">
+                        <a href="edit-hero-details-story.html"
+                           class="u-uppercase"
+                           role="tab" aria-controls="story" aria-selected="false">Story</a>
+                    </li>
+                    <li role="presentation" class="tabs-title is-active" style="width: 33.3%">
+                        <a href="edit-hero-details-tips.html"
+                           class="u-uppercase"
+                           role="tab" aria-controls="story" aria-selected="true">Tips</a>
+                    </li>
+                </ul>
+                <div data-tabs-content="details-tabs" class="tabs-content">
+                    <section id="tips" class="tabs-panel is-active" role="tabpanel" aria-hidden="false" aria-labelledby="tips-label">
+                        <div class="hero-detail-wrapper">
+                            <div class="row">
+                                <div class="column sm-12 md-6 hero-detail-role">
+                                    <h3 class="h4 hero-detail-title m-indent">Genji</h3>
+                                    <h4 class="h2 hero-detail-role-name">Tips</h4>
+                                </div>
+                            </div><br>
+                            <hr class="tab-separator">
+                            <p class="hero-detail-description">Genji flings precise and deadly Shuriken at his targets,
+                                and
+                                uses his technologically-advanced katana to deflect projectiles or deliver a Swift
+                                Strike
+                                that cuts down enemies.</p>
+                            <a class="button md-m md-push-8">Delete</a>
+                            <br>
+                            <hr class="tab-separator">
+                            <p class="hero-detail-description">Genji flings precise and deadly Shuriken at his targets,
+                                and
+                                uses his technologically-advanced katana to deflect projectiles or deliver a Swift
+                                Strike
+                                that cuts down enemies.</p>
+                            <a class="button md-m md-push-8">Delete</a>
+                            <br>
+                            <hr class="tab-separator">
+                            <p class="hero-detail-description">Genji flings precise and deadly Shuriken at his targets,
+                                and
+                                uses his technologically-advanced katana to deflect projectiles or deliver a Swift
+                                Strike
+                                that cuts down enemies.</p>
+                            <a class="button md-m md-push-8">Delete</a>
+                            <br>
+                            <hr class="tab-separator">
+                            <p class="hero-detail-description">Genji flings precise and deadly Shuriken at his targets,
+                                and
+                                uses his technologically-advanced katana to deflect projectiles or deliver a Swift
+                                Strike
+                                that cuts down enemies.</p>
+                            <a class="button md-m md-push-8">Delete</a>
+                            <br>
+                            <hr class="tab-separator">
+                            <form>
+                                <div class="row">
+                                    <div class="column sm-12 md-12 hero-detail-role">
+                                        <label class="h5">Add tip:
+                                            <input id="addTip" name="addTip" type="text">
+                                        </label>
+                                        <div class="u-align-center">
+                                            <input class="button m-lg" type="submit" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="u-align-center u-invert">
+    <hr class="footer-rule">
+    <section class="u-max-width-container row column content-box m-tinyPad">
+        <h6>SoftUni Overwatch database by Ivaka</h6>
+    </section>
+    <hr class="footer-rule">
+</section>
+</body>
+</html>
