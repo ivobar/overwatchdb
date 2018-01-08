@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://overwatch-a.akamaihd.net/blizzard-d101f2900963da68c7204b467eedf16df4ff77c7f3104d43905d50ba470760841cd89cdcbc79e083d9a3deeabb42c40561b56387fd2767af99f1777395fa3e52.css');
+@import url('https://overwatch-a.akamaihd.net/app-e7b53ef48c085f064d58aaefb9933da5fcad25c5c4bdf116bcbda165ea23715fbe0ab0e2098e20e538a51507d4bfeb955d2daa1c6c79541184db8796cb0b8efa.css');
+
+.Theme--overwatch {
+    background: url(./assets/img/backgrounds/background-overwatch-top.jpg) center -200px no-repeat,
+    url(./assets/img/backgrounds/background-overwatch-repeat.jpg) center -200px repeat-y #1f2326;
+    margin: 0;
+    background-color: #0f2a48;
+    background-position: center -200px;
+}
+
+.hero-detail-tabs-mod {
+    width: 33.3%;
+    margin-left: 1%;
+    text-align: center;
+}
+
+form > label {
+    display: block;
+}
+
+label > input {
+    display: block;
+    margin: 10px auto;
+    width: 20em;
+    border: 2px solid #ff9c00;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.table-div {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(198, 203, 222, .35);
+}
+
+.data-table > tbody td {
+    padding: 1rem 2rem;
+    color: rgba(45,41,60,.55);
+    word-break: break-all;
+}
+
+.data-table > tbody td:last-child {
+    width: 40%;
+    text-align: right;
+    color: #405275;
+    font-family: Arial,sans-serif;
+    font-weight: 400;
+}
+
+.data-table > thead th {
+    padding: 1.4rem 2rem 1.2rem;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    background-color: #c6cbde;
+    color: #405275;
+    text-align: left;
+}
+
+.icon {
+    margin-right: .8rem;
+    fill: #405275;
+    width: 26px;
+    height: 26px;
+}
+
+.data-table > thead h5 {
+    display: inline-block;
+    font-size: 2rem;
+}
+
+label > textarea {
+    display: block;
+    margin: 10px auto;
+    width: 20em;
+    border: 2px solid #ff9c00;
+    padding: 8px 15px;
+    border-radius: 5px;
+}

@@ -1,0 +1,49 @@
+<div class="navbars" style="top: 0px;">
+  <nav role="main" class="is-expanded is-submenu-open is-search-open">
+      <div class="nav-section">
+          <a routerLink="/home" class="nav-logo"></a>
+      </div>
+      <div class="nav-section">
+          <ul class="nav-menu">
+              <li><a routerLink="" id="myMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.myMenu}" >My Overwatch</a>
+                  <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.myMenu}" style="margin-left: 225px;">
+                      <li><a href="/myprofile/:userid" class="nav-btn m-highlight">My profile</a></li>
+                      <li><a href="/myreplays/:userid" class="nav-btn m-highlight">My replays</a></li>
+                      <li><a href="/mystats/:userid" class="nav-btn m-highlight">My stats</a></li>
+                  </ul>
+              </li>
+              <li><a href="/heroes" class="nav-btn">Heroes</a>
+              </li>
+              <li><a routerLink="" id="comMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.comMenu}">Communities</a>
+                  <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.comMenu}" style="margin-left: 460px;">
+                      <li><a href="#" class="nav-btn m-highlight">Forum</a></li>
+                      <li><a href="https://eu.battle.net/forums/en/overwatch/" class="nav-btn m-highlight">Official forum</a></li>
+                      <li><a href="https://www.reddit.com/r/Overwatch/" class="nav-btn m-highlight">Reddit</a></li>
+                  </ul>
+              </li>
+              <li><a routerLink="" id="adminMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.adminMenu}">Administration</a>
+                  <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.adminMenu}" style="margin-left: 600px;">
+                      <li><a href="add-hero-overview.html" class="nav-btn m-highlight">Add Hero</a></li>
+                      <li><a href="#" class="nav-btn m-highlight">Edit Users</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+      <div class="nav-section m-right">
+          <div class="nav-search-bar u-inline-block m-desktop-only">
+              <svg viewBox="0 0 32 32" class="icon nav-search-icon u-inline-block">
+                  <path class="cls-1"
+                        d="M3.425,31.747l9.192-9.169a12.006,12.006,0,0,0,7,2.177,12.136,12.136,0,0,0,4.8-.974A12.095,12.095,0,0,0,30.993,17.2a12.328,12.328,0,0,0,0-9.6,12.107,12.107,0,0,0-6.578-6.583,12.3,12.3,0,0,0-9.6,0A12.118,12.118,0,0,0,8.24,7.594a12.163,12.163,0,0,0-.973,4.8,12.023,12.023,0,0,0,2.176,7L0.253,28.583a0.726,0.726,0,0,0,0,1.028L2.4,31.748A0.725,0.725,0,0,0,3.425,31.747Zm9.357-12.535A9.135,9.135,0,0,1,9.992,12.5,9.135,9.135,0,0,1,12.782,5.8a9.148,9.148,0,0,1,6.711-2.787A9.149,9.149,0,0,1,26.2,5.8,9.139,9.139,0,0,1,28.992,12.5,9.14,9.14,0,0,1,26.2,19.212,9.153,9.153,0,0,1,19.492,22,9.152,9.152,0,0,1,12.782,19.212Z"></path>
+              </svg>
+              <form id="player-search" class="nav-search-form nav-search-mobile u-inline-block">
+                  <input name="q" placeholder="Player battletag" class="nav-search-field" type="text">
+              </form>
+          </div>
+          <a routerLink="/login" class="nav-btn u-inline-block">Login</a>
+          <div class="nav-btn u-inline-block">
+              <a routerLink="/register"
+                 class="btn m-sm m-light-text nav-buy-btn">Register</a>
+          </div>
+      </div>
+  </nav>
+</div>
