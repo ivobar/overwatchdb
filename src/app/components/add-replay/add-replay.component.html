@@ -1,12 +1,18 @@
 <section class="u-align-center u-invert u-nav-offset">
-    <form>
-        <label class="h5">Replay Url:
-            <input id="username" name="username" type="text">
+    <h4>Add replay:</h4>
+    <span class="h6" style="color: red" *ngIf="errMessage">{{errMessage}}</span>
+    <form (ngSubmit)="createReplay()" [formGroup]="replayForm">
+        <label class="h5">Replay Title:
+            <input id="title" name="title" type="text" formControlName="title">
         </label>
-        <label for="password" class="h5">Custom thumbnail Url (optional):
-            <input id="password" name="password" type="password">
+        <label for="password" class="h5">Video link:
+            <input id="video" name="video" type="text" formControlName="video">
         </label>
-        <input class="button m-lg" type="submit" value="Add replay" >
+        <label for="password" class="h5">Custom thumbnail link:
+            <input id="thumbnail" name="thumbnail" type="text" formControlName="thumbnail">
+        </label>
+        <input [hidden]="!replayForm.valid" class="button m-lg" type="submit" value="Add replay">
+        <span class="h6" style="color: red" *ngIf="!replayForm.valid">You must fill all the fields to add a replay!</span>
     </form>
 </section>
 <br>

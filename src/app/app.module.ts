@@ -1,5 +1,5 @@
 //Modules
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AuthenticationModule } from './auth/auth.module';
 import { AppRoutesModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { AddReplayComponent } from './components/add-replay/add-replay.component
 
 //Services
 import { AuthGuard } from './guards/auth.guard.service';
+import { ReplayService } from './services/replays.service';
+import { ReplayCardComponent } from './components/replay-card/replay-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { AuthGuard } from './guards/auth.guard.service';
     HomeComponent,
     FooterComponent,
     MyReplaysComponent,
-    AddReplayComponent
+    AddReplayComponent,
+    ReplayCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,10 @@ import { AuthGuard } from './guards/auth.guard.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    ReplayService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
