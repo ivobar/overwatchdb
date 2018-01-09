@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MyProfileComponent } from './auth/components/my-profile/my-profile.component';
 import { MyReplaysComponent } from './components/my-replays/my-replays.component';
 import { AddReplayComponent } from './components/add-replay/add-replay.component';
+import { DeleteReplayComponent } from './components/delete-replay/delete-replay.component';
+import { EditReplayComponent } from './components/edit-replay/edit-replay.component';
 
 //Guards
 import { AuthGuard } from './guards/auth.guard.service';
@@ -24,6 +26,8 @@ const routes: Routes = [
     { path: 'myprofile', canActivate: [AuthGuard], component: MyProfileComponent },
     { path: 'myreplays', canActivate: [AuthGuard], component: MyReplaysComponent },
     { path: 'addreplay', canActivate: [AuthGuard], component: AddReplayComponent },
+    { path: 'replay/delete/:id', canActivate: [AuthGuard], component: DeleteReplayComponent },
+    { path: 'replay/edit/:id', canActivate: [AuthGuard], component: EditReplayComponent }
 ];
 
 @NgModule({

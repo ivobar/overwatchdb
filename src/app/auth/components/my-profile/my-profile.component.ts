@@ -36,7 +36,7 @@ export class MyProfileComponent implements OnInit {
     this.validationErrorMessage(usernameControl, 'Username');
 
     let emailControl = this.updateForm.get('email');
-    this.validationErrorMessage(emailControl, 'E-mai;');
+    this.validationErrorMessage(emailControl, 'E-mail');
 
     let battleTagControl = this.updateForm.get('battleTag');
     this.validationErrorMessage(battleTagControl, 'Battle tag');

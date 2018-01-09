@@ -14,6 +14,16 @@ export class ReplayService {
         private http: HttpClient
     ) { }
 
+    getReplay(replayId: string): Observable<ReplayModel> {
+        let getUrl = baseUrl + `/replays/${replayId}`;
+        return this.http.get<ReplayModel>(
+            getUrl,
+            {
+                headers: this.createAuthHeaders('Kinvey')
+            }
+        );
+    }
+
     getReplays(): Observable<ReplayModel[]> {
         let userId = localStorage.getItem('userId');
         let getUrl = baseUrl + `/replays?query={"_acl.creator":"${userId}"}`;
@@ -25,8 +35,8 @@ export class ReplayService {
         )
     }
 
-    postReplay(model: ReplayModel) : Observable<Object> {
-        let postReplayUrl = baseUrl+'/replays';
+    postReplay(model: ReplayModel): Observable<Object> {
+        let postReplayUrl = baseUrl + '/replays';
         return this.http.post(
             postReplayUrl,
             JSON.stringify(model),
@@ -36,8 +46,25 @@ export class ReplayService {
         )
     }
 
-    deleteReplay() {
+    deleteReplay(replayId: string): Observable<Object> {
+        let deleteReplayUrl = baseUrl + `/replays/${replayId}`;
+        return this.http.delete(
+            deleteReplayUrl,
+            {
+                headers: this.createAuthHeaders('Kinvey')
+            }
+        )
+    }
 
+    updateReplay(replayId: string, model: ReplayModel): Observable<Object> {
+        let updateReplayUrl = baseUrl + `/replays/${replayId}`;
+        return this.http.put(
+            updateReplayUrl,
+            JSON.stringify(model),
+            {
+                headers: this.createAuthHeaders('Kinvey')
+            }
+        )
     }
 
     private createAuthHeaders(type: string): HttpHeaders {
