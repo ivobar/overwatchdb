@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MyProfileComponent } from './auth/components/my-profile/my-profile.component';
+import { MyReplaysComponent } from './components/my-replays/my-replays.component';
+import { AddReplayComponent } from './components/add-replay/add-replay.component';
 
 //Guards
 import { AuthGuard } from './guards/auth.guard.service';
@@ -19,11 +21,13 @@ const routes: Routes = [
     { path: 'register', component: RegisterFormComponent },
     { path: 'login', component: LoginFormComponent },
     { path: 'logout', component: LogoutComponent },
-    { path: 'myprofile', component: MyProfileComponent }
+    { path: 'myprofile', canActivate: [AuthGuard], component: MyProfileComponent },
+    { path: 'myreplays', canActivate: [AuthGuard], component: MyReplaysComponent },
+    { path: 'addreplay', canActivate: [AuthGuard], component: AddReplayComponent },
 ];
 
 @NgModule({
-    imports:[RouterModule.forRoot(routes)],
-    exports:[RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutesModule { };

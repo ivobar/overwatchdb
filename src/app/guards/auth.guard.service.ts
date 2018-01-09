@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     private router : Router
   ) { }
   
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {    
     return this.checkLoggedIn(state.url);
   }
 

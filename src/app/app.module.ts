@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MyReplaysComponent } from './components/my-replays/my-replays.component';
+import { AddReplayComponent } from './components/add-replay/add-replay.component';
 
 //Services
 import { AuthGuard } from './guards/auth.guard.service';
@@ -19,7 +21,9 @@ import { AuthGuard } from './guards/auth.guard.service';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    MyReplaysComponent,
+    AddReplayComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { AuthGuard } from './guards/auth.guard.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

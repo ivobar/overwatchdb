@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Services
 import { AuthenticationService } from './auth.service';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { AuthGuard } from '../guards/auth.guard.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     ...authenticationComponents
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    AuthGuard
   ]
 })
 export class AuthenticationModule { } 
