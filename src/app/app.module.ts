@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AuthenticationModule } from './auth/auth.module';
 import { AppRoutesModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Components
 import { AppComponent } from './app.component';
@@ -23,9 +24,11 @@ import { AuthGuard } from './guards/auth.guard.service';
   imports: [
     BrowserModule,
     AuthenticationModule,
-    AppRoutesModule
+    AppRoutesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

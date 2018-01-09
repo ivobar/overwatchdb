@@ -1,27 +1,30 @@
 import { NgModule } from '@angular/core';
 
-import { authenticationComponents } from  './index';
+import { authenticationComponents } from './index';
 
 // Modules
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { AuthenticationService } from './auth.service';
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     ...authenticationComponents
   ],
-  imports: [ 
-    CommonModule, 
+  imports: [
+    CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
-  exports: [ 
+  exports: [
     ...authenticationComponents
   ],
-  providers: [ AuthenticationService ]
+  providers: [
+    AuthenticationService
+  ]
 })
-export class AuthenticationModule {  } 
+export class AuthenticationModule { } 

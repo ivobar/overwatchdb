@@ -5,7 +5,7 @@
       </div>
       <div class="nav-section">
           <ul class="nav-menu">
-              <li><a routerLink="" id="myMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.myMenu}" >My Overwatch</a>
+              <li><a routerLink="" *ngIf="authService.isLoggedIn()" id="myMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.myMenu}" >My Overwatch</a>
                   <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.myMenu}" style="margin-left: 225px;">
                       <li><a href="/myprofile/:userid" class="nav-btn m-highlight">My profile</a></li>
                       <li><a href="/myreplays/:userid" class="nav-btn m-highlight">My replays</a></li>
@@ -15,13 +15,18 @@
               <li><a href="/heroes" class="nav-btn">Heroes</a>
               </li>
               <li><a routerLink="" id="comMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.comMenu}">Communities</a>
-                  <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.comMenu}" style="margin-left: 460px;">
+                  <ul *ngIf="!authService.isLoggedIn()" class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.comMenu}" style="margin-left:300px">
                       <li><a href="#" class="nav-btn m-highlight">Forum</a></li>
                       <li><a href="https://eu.battle.net/forums/en/overwatch/" class="nav-btn m-highlight">Official forum</a></li>
                       <li><a href="https://www.reddit.com/r/Overwatch/" class="nav-btn m-highlight">Reddit</a></li>
                   </ul>
+                  <ul *ngIf="authService.isLoggedIn()" class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.comMenu}"style="margin-left:460px">
+                        <li><a href="#" class="nav-btn m-highlight">Forum</a></li>
+                        <li><a href="https://eu.battle.net/forums/en/overwatch/" class="nav-btn m-highlight">Official forum</a></li>
+                        <li><a href="https://www.reddit.com/r/Overwatch/" class="nav-btn m-highlight">Reddit</a></li>
+                    </ul>
               </li>
-              <li><a routerLink="" id="adminMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.adminMenu}">Administration</a>
+              <li><a routerLink="" *ngIf="authService.isAdmin()" id="adminMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.adminMenu}">Administration</a>
                   <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.adminMenu}" style="margin-left: 600px;">
                       <li><a href="add-hero-overview.html" class="nav-btn m-highlight">Add Hero</a></li>
                       <li><a href="#" class="nav-btn m-highlight">Edit Users</a></li>
@@ -30,6 +35,7 @@
           </ul>
       </div>
       <div class="nav-section m-right">
+        <a *ngIf="authService.isLoggedIn()" routerLink="" class="nav-btn">Welcome, {{authService.user}}!</a>            
           <div class="nav-search-bar u-inline-block m-desktop-only">
               <svg viewBox="0 0 32 32" class="icon nav-search-icon u-inline-block">
                   <path class="cls-1"
@@ -39,8 +45,9 @@
                   <input name="q" placeholder="Player battletag" class="nav-search-field" type="text">
               </form>
           </div>
-          <a routerLink="/login" class="nav-btn u-inline-block">Login</a>
-          <div class="nav-btn u-inline-block">
+          <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="nav-btn u-inline-block">Login</a>
+          <a *ngIf="authService.isLoggedIn()" routerLink="/logout" class="nav-btn u-inline-block">Logout</a>
+          <div *ngIf="!authService.isLoggedIn()" class="nav-btn u-inline-block">
               <a routerLink="/register"
                  class="btn m-sm m-light-text nav-buy-btn">Register</a>
           </div>
