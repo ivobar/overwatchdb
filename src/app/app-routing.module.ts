@@ -13,6 +13,11 @@ import { MyReplaysComponent } from './components/my-replays/my-replays.component
 import { AddReplayComponent } from './components/add-replay/add-replay.component';
 import { DeleteReplayComponent } from './components/delete-replay/delete-replay.component';
 import { EditReplayComponent } from './components/edit-replay/edit-replay.component';
+import { HeroListComponent } from './components/hero-list/hero-list.component';
+import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
+import { MyStatsComponent } from './components/my-stats/my-stats.component';
+import { HeroEditComponent } from './components/hero-edit/hero-edit.component';
+
 
 //Guards
 import { AuthGuard } from './guards/auth.guard.service';
@@ -25,9 +30,13 @@ const routes: Routes = [
     { path: 'logout', component: LogoutComponent },
     { path: 'myprofile', canActivate: [AuthGuard], component: MyProfileComponent },
     { path: 'myreplays', canActivate: [AuthGuard], component: MyReplaysComponent },
+    { path: 'mystats', canActivate: [AuthGuard], component: MyStatsComponent },
     { path: 'addreplay', canActivate: [AuthGuard], component: AddReplayComponent },
     { path: 'replay/delete/:id', canActivate: [AuthGuard], component: DeleteReplayComponent },
-    { path: 'replay/edit/:id', canActivate: [AuthGuard], component: EditReplayComponent }
+    { path: 'replay/edit/:id', canActivate: [AuthGuard], component: EditReplayComponent },
+    { path: 'heroes', component: HeroListComponent },
+    { path: 'hero/details/:id', component: HeroDetailsComponent },
+    { path: 'hero/edit/:id', component: HeroEditComponent },
 ];
 
 @NgModule({

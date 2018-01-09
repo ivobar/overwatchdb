@@ -1,0 +1,152 @@
+<section class="u-align-center u-nav-offset">
+    <img src="/assets/img/heroes/322px-Genji-portrait.png">
+    <br>
+    <a routerLink="/hero/edit/Genji" class="button m-md">Edit hero</a>
+    <a class="button m-md">Delete hero</a>
+</section>
+<section class="hero-detail section-divider m-top-only u-full-width-container">
+    <div class="u-max-width-container pad-0 pad-30@lg-min pad-only-sides">
+        <div class="row hero-detail-tabs">
+            <div id="tabs" class="column sm-12">
+                <ul id="details-tabs" role="tablist" class="tabs">
+                    <li role="presentation" class="tabs-title is-active" style="width: 33.3%">
+                        <a href="./hero-details-overview.html" aria-selected="true"
+                           class="u-uppercase" role="tab"
+                           aria-controls="overview">Overview</a>
+                    </li>
+                    <li role="presentation" class="tabs-title" style="width: 33.3%">
+                        <a href="./hero-details-story.html"
+                           class="u-uppercase"
+                           role="tab" aria-controls="story" aria-selected="false">Story</a>
+                    </li>
+                    <li role="presentation" class="tabs-title" style="width: 33.3%">
+                        <a href="./hero-details-tips.html"
+                           class="u-uppercase"
+                           role="tab" aria-controls="story" aria-selected="false">Tips</a>
+                    </li>
+                </ul>
+                <div data-tabs-content="details-tabs" class="tabs-content">
+                    <section id="overview" class="tabs-panel is-active" role="tabpanel" aria-hidden="false" aria-labelledby="overview-label">
+                        <div class="hero-detail-wrapper">
+                            <div class="row">
+                                <div class="column sm-12 md-6 hero-detail-role">
+                                    <h3 class="h4 hero-detail-title m-indent">Role</h3>
+                                    <h4 class="h2 hero-detail-role-name">Offense</h4>
+                                    <svg viewBox="0 0 32 32" role="presentation" class="icon hero-detail-role-icon">
+                                        <title>Offense</title>
+                                        <g>
+                                            <rect x="2.1" y="28.1" width="7.1" height="3.9"></rect>
+                                            <path d="M9.1,7c0,0,0-0.5,0-0.7C8.6,1.5,5.6,0,5.6,0s-3,1.5-3.5,6.3c0,0.2,0,0.7,0,0.7v18.4h3.5h3.5V7z"></path>
+                                        </g>
+                                        <g>
+                                            <rect x="12.5" y="28.1" width="7.1" height="3.9"></rect>
+                                            <path d="M19.5,7c0,0,0-0.5,0-0.7C19,1.5,16,0,16,0s-3,1.5-3.5,6.3c0,0.2,0,0.7,0,0.7v18.4H16h3.5V7z"></path>
+                                        </g>
+                                        <g>
+                                            <rect x="22.9" y="28.1" width="7.1" height="3.9"></rect>
+                                            <path d="M29.9,7c0,0,0-0.5,0-0.7C29.4,1.5,26.4,0,26.4,0s-3,1.5-3.5,6.3c0,0.2,0,0.7,0,0.7v18.4h3.5h3.5V7z"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="column sm-12 md-6">
+                                    <div class="hero-detail-difficulty"><h3 class="h4 hero-detail-title">Difficulty</h3>
+                                        <span class="star"></span><span class="star"></span><span class="star"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="hero-detail-description">Genji flings precise and deadly Shuriken at his targets,
+                                and
+                                uses his technologically-advanced katana to deflect projectiles or deliver a Swift
+                                Strike
+                                that cuts down enemies.</p></div>
+                        <hr class="tab-separator">
+                        <div class="hero-detail-wrapper m-same-pad"><h3 class="h4 hero-detail-title">Abilities</h3>
+                            <div class="hero-detail-abilities"></div>
+                            <div data-ability-id="shuriken" class="hero-ability">
+                                <div class="hero-ability-icon-container">
+                                    <div class="hero-ability-icon-bg m-small"><img
+                                            src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-shuriken/icon-ability.png"
+                                            class="hero-ability-icon m-weapon"></div>
+                                </div>
+                                <div class="hero-ability-descriptor"><h4 class="h5">Shuriken</h4>
+                                    <p>Genji looses three deadly throwing stars in quick succession. Alternatively, he
+                                        can
+                                        throw three shuriken in a wider spread.
+                                    </p></div>
+                                <video controls="" preload="none"
+                                       poster="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-shuriken/thumb-ability.jpg"
+                                       data-analytics="ability-showcase-video" data-hero-id="genji"
+                                       data-hero-ability="shuriken" class="hero-ability-video">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-shuriken/video-ability.webm"
+                                            type="video/webm">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-shuriken/video-ability.mp4"
+                                            type="video/mp4">
+                                </video>
+                            </div>
+                            <div data-ability-id="deflect" class="hero-ability">
+                                <div class="hero-ability-icon-container">
+                                    <div class="hero-ability-icon-bg m-small"><img
+                                            src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-deflect/icon-ability.png"
+                                            class="hero-ability-icon"></div>
+                                </div>
+                                <div class="hero-ability-descriptor"><h4 class="h5">Deflect</h4>
+                                    <p>With lightning-quick swipes of his sword, Genji reflects an oncoming projectile
+                                        and
+                                        sends it rebounding towards his opponent.</p></div>
+                                <video controls="" preload="none"
+                                       poster="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-deflect/thumb-ability.jpg"
+                                       data-analytics="ability-showcase-video" data-hero-id="genji"
+                                       data-hero-ability="deflect" class="hero-ability-video">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-deflect/video-ability.webm"
+                                            type="video/webm">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-deflect/video-ability.mp4"
+                                            type="video/mp4">
+                                </video>
+                            </div>
+                            <div data-ability-id="swift-strike" class="hero-ability">
+                                <div class="hero-ability-icon-container">
+                                    <div class="hero-ability-icon-bg m-small"><img
+                                            src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-swift-strike/icon-ability.png"
+                                            class="hero-ability-icon"></div>
+                                </div>
+                                <div class="hero-ability-descriptor"><h4 class="h5">Swift Strike</h4>
+                                    <p>Genji darts forward, slashing with his katana and passing through foes in his
+                                        path.
+                                        If Genji eliminates a target, he can instantly use this ability again.</p></div>
+                                <video controls="" preload="none"
+                                       poster="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-swift-strike/thumb-ability.jpg"
+                                       data-analytics="ability-showcase-video" data-hero-id="genji"
+                                       data-hero-ability="swift-strike" class="hero-ability-video">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-swift-strike/video-ability.webm"
+                                            type="video/webm">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-swift-strike/video-ability.mp4"
+                                            type="video/mp4">
+                                </video>
+                            </div>
+                            <div data-ability-id="dragonblade" class="hero-ability">
+                                <div class="hero-ability-icon-container">
+                                    <div class="hero-ability-icon-bg m-small"><img
+                                            src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-dragonblade/icon-ability.png"
+                                            class="hero-ability-icon"></div>
+                                </div>
+                                <div class="hero-ability-descriptor"><h4 class="h5">Dragonblade</h4>
+                                    <p>Genji brandishes his katana for a brief period of time. Until he sheathes his
+                                        sword,
+                                        Genji can deliver killing strikes to any targets within his reach.</p></div>
+                                <video controls="" preload="none"
+                                       poster="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-dragonblade/thumb-ability.jpg"
+                                       data-analytics="ability-showcase-video" data-hero-id="genji"
+                                       data-hero-ability="dragonblade" class="hero-ability-video">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-dragonblade/video-ability.webm"
+                                            type="video/webm">
+                                    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/genji/ability-dragonblade/video-ability.mp4"
+                                            type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

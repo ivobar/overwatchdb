@@ -9,10 +9,10 @@
                   <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.myMenu}" style="margin-left: 225px;">
                       <li><a routerLink="/myprofile" class="nav-btn m-highlight">My profile</a></li>
                       <li><a routerLink="/myreplays" class="nav-btn m-highlight">My replays</a></li>
-                      <li><a routerLink="/mystats/:userid" class="nav-btn m-highlight">My stats</a></li>
+                      <li><a routerLink="/mystats" class="nav-btn m-highlight">My stats</a></li>
                   </ul>
               </li>
-              <li><a href="/heroes" class="nav-btn">Heroes</a>
+              <li><a routerLink="/heroes" class="nav-btn">Heroes</a>
               </li>
               <li><a style="cursor: pointer;" id="comMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.comMenu}">Communities</a>
                   <ul *ngIf="!authService.isLoggedIn()" class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.comMenu}" style="margin-left:300px">
