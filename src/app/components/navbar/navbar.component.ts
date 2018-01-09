@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
     if (this.expand[event.target.id]) {
       this.expand[event.target.id] = false;
     } else {
-      this.expand[event.target.id] = true;
+      this.expand[event.target.id] = true;    
     }
   }
 

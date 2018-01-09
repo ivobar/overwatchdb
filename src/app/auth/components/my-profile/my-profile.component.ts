@@ -1,66 +1,70 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../auth.service';
-import { LoginModel } from '../../models/login.model';
+import { UpdateModel } from '../../models/update.model';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../auth.service';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  selector: 'app-my-profile',
+  templateUrl: './my-profile.component.html',
+  styleUrls: ['./my-profile.component.css']
 })
-
-export class LoginFormComponent implements OnInit {
-  public model: LoginModel;
-  public loginFail: boolean;
-  public username: string;
-  public logForm: FormGroup;
-  public errMessage: string;
+export class MyProfileComponent implements OnInit {
+  public model: UpdateModel;
+  public formReveal: boolean;
+  public updateForm: FormGroup;
   public errorMessagesArr: string[];
+  public errMessage: string;
+  public updateFail: boolean;
 
   constructor(
     private authService: AuthenticationService,
     private router: Router,
     private fb: FormBuilder
   ) {
-    this.errorMessagesArr = ['Username is mandatory!']
+    this.errorMessagesArr = [''];
   }
 
   ngOnInit() {
-    this.logForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+    this.updateForm = this.fb.group({
+      username: [localStorage.getItem('username'), Validators.required],
+      email: [localStorage.getItem('email') ? localStorage.getItem('email') : '', Validators.required],
+      battleTag: [localStorage.getItem('battleTag') ? localStorage.getItem('battleTag') : '', Validators.required]
     })
 
-    const usernameControl = this.logForm.get('username');
+    let usernameControl = this.updateForm.get('username');
     this.validationErrorMessage(usernameControl, 'Username');
 
-    const passwordControl = this.logForm.get('password');
-    this.validationErrorMessage(passwordControl, 'Password');
+    let emailControl = this.updateForm.get('email');
+    this.validationErrorMessage(emailControl, 'E-mai;');
+
+    let battleTagControl = this.updateForm.get('battleTag');
+    this.validationErrorMessage(battleTagControl, 'Battle tag');
   }
 
-  login(): void {
-    this.model = new LoginModel(
-      this.logForm.value.username,
-      this.logForm.value.password
+  revealForm() {
+    this.formReveal = true;
+  }
+
+  updateUser() {
+    this.model = new UpdateModel(
+      this.updateForm.value.username,
+      this.updateForm.value.email,
+      this.updateForm.value.battleTag
     );
-    this.authService.login(this.model)
-      .subscribe(
+
+    this.authService.update(this.model).subscribe(
       data => {
-        this.successfulLogin(data);
+        this.successfulUpdate(data);
       },
       err => {
-        this.loginFail = true;
+        this.updateFail = true;
         this.errMessage = 'Invalid credentials!'
       }
-      )
+    )
   }
 
-  get diagnostics(): string {
-    return JSON.stringify(this.model);
-  }
-
-  successfulLogin(data): void {
+  successfulUpdate(data): void {
     this.authService.authtoken = data['_kmd']['authtoken'];
     this.authService.user = data['username'];
     localStorage.setItem('authtoken', data['_kmd']['authtoken']);
@@ -68,8 +72,9 @@ export class LoginFormComponent implements OnInit {
     localStorage.setItem('userId', data['_id']);
     localStorage.setItem('email', data['email']);
     localStorage.setItem('battleTag', data['battleTag']);
-    this.loginFail = false;
-    this.router.navigateByUrl('/home');
+    this.updateFail = false;
+    this.formReveal = false;
+    this.router.navigateByUrl('/myprofile');
   }
 
   validationErrorMessage(control: AbstractControl, field: string): void {

@@ -1,0 +1,59 @@
+<div class="u-invert u-nav-offset">
+    <div class="u-max-width-container content-box row gutter-18 gutter-30">
+        <div *ngIf="formReveal" class="column lg-6">
+            <div data="blog-body" id="patch-42210">
+                <h3>Edit your profile</h3>
+                <span class="h6" style="color: red" *ngIf="errMessage">{{errMessage}}</span>
+                <form (ngSubmit)="updateUser()" [formGroup]="updateForm">
+                    <br>
+                    <label class="h5">Username:
+                        <input id="username" name="username" type="text" formControlName="username" required >
+                    </label>
+                    <br>
+                    <label class="h5">E-mail address:
+                        <input id="email" name="email" type="email" formControlName="email" required>
+                    </label>
+                    <br>
+                    <label class="h5">Battle tag:
+                        <input id="battleTag" name="battleTag" type="text" formControlName="battleTag" required>
+                    </label>
+                    <input [hidden]="!updateForm.valid" class="button m-lg" type="submit" value="Save">
+                    <span class="h6" style="color: red" *ngIf="!updateForm.valid">You must fill all the fields to register!</span>
+                </form>
+
+            </div>
+        </div>
+        <div class="column lg-6">
+            <div class="blog-sidebar"><h5 class="h3 blog-sidebar-title u-invert">My Profile Details</h5>
+                <ul class="blog-sidebar-list">
+                    <li class="blog-sidebar-article">
+                        <a style="cursor: default;">
+                            <h4 class="h4">Username</h4>
+                            <p class="h5" style="color: white">{{updateForm.value.username}}</p>
+                        </a>
+                    </li>
+                    <li class="blog-sidebar-article">
+                        <a style="cursor: default;">
+                            <h4 class="h4">E-mail address</h4>
+                            <p class="h5" style="color: white">{{updateForm.value.email}}</p>
+                        </a>
+                    </li>
+                    <li class="blog-sidebar-article">
+                        <a style="cursor: default;">
+                            <h4 class="h4">Battle tag</h4>
+                            <p class="h5" style="color: white">{{updateForm.value.battleTag}}</p>
+                        </a>
+                    </li>
+                    <li class="blog-sidebar-article u-font-small" style="display: inline">
+                        <button class="button m-md">Reset password</button>
+                    </li>
+                    <li class="blog-sidebar-article u-font-small" style="display: inline">
+                        <button (click)="revealForm()" class="button m-md">Edit profile</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>

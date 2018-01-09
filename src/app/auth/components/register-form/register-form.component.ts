@@ -85,6 +85,8 @@ export class RegisterFormComponent implements OnInit {
     this.authService.user = data['username'];
     localStorage.setItem('authtoken', data['_kmd']['authtoken']);
     localStorage.setItem('username', data['username']);
+    localStorage.setItem('email', data['email']);
+    localStorage.setItem('battleTag', data['battleTag']);
     this.router.navigateByUrl('/home');
   }
 

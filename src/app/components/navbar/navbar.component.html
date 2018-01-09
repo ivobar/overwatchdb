@@ -5,16 +5,16 @@
       </div>
       <div class="nav-section">
           <ul class="nav-menu">
-              <li><a routerLink="" *ngIf="authService.isLoggedIn()" id="myMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.myMenu}" >My Overwatch</a>
+              <li><a style="cursor: pointer;" *ngIf="authService.isLoggedIn()" id="myMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.myMenu}" >My Overwatch</a>
                   <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.myMenu}" style="margin-left: 225px;">
-                      <li><a href="/myprofile/:userid" class="nav-btn m-highlight">My profile</a></li>
+                      <li><a routerLink="/myprofile" class="nav-btn m-highlight">My profile</a></li>
                       <li><a href="/myreplays/:userid" class="nav-btn m-highlight">My replays</a></li>
                       <li><a href="/mystats/:userid" class="nav-btn m-highlight">My stats</a></li>
                   </ul>
               </li>
               <li><a href="/heroes" class="nav-btn">Heroes</a>
               </li>
-              <li><a routerLink="" id="comMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.comMenu}">Communities</a>
+              <li><a style="cursor: pointer;" id="comMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.comMenu}">Communities</a>
                   <ul *ngIf="!authService.isLoggedIn()" class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.comMenu}" style="margin-left:300px">
                       <li><a href="#" class="nav-btn m-highlight">Forum</a></li>
                       <li><a href="https://eu.battle.net/forums/en/overwatch/" class="nav-btn m-highlight">Official forum</a></li>
@@ -26,7 +26,7 @@
                         <li><a href="https://www.reddit.com/r/Overwatch/" class="nav-btn m-highlight">Reddit</a></li>
                     </ul>
               </li>
-              <li><a routerLink="" *ngIf="authService.isAdmin()" id="adminMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.adminMenu}">Administration</a>
+              <li><a style="cursor: pointer;" *ngIf="authService.isAdmin()" id="adminMenu" (click)="expandMenu($event)" class="nav-btn m-has-children" [ngClass]="{'m-open': expand.adminMenu}">Administration</a>
                   <ul class="nav-menu m-sub-menu" [ngClass]="{'m-open': expand.adminMenu}" style="margin-left: 600px;">
                       <li><a href="add-hero-overview.html" class="nav-btn m-highlight">Add Hero</a></li>
                       <li><a href="#" class="nav-btn m-highlight">Edit Users</a></li>

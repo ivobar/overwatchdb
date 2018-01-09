@@ -9,10 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { AuthenticationService } from './auth.service';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
-    ...authenticationComponents
+    ...authenticationComponents,
+    MyProfileComponent
   ],
   imports: [
     CommonModule,
