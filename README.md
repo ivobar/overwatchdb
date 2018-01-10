@@ -1,27 +1,46 @@
 # Overwatchdb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+The goal of this app is to provide the average Overwatch player with information and functionallity that allows him to improve in the game and increase his skill rating.
 
-## Development server
+## Backend REST services
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The app uses two main backend APIs:
+  - Kinvey - for user information and user and admin generated content;
+  - OWAPI API - for statistics data, mainly for the My Stats section - https://github.com/SunDwarf/OWAPI/blob/master/api.md;
 
-## Code scaffolding
+## Styling and HTML
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The used CSS and HTML is mainly from the official owerwatch site and forums:
+  - https://playoverwatch.com/en-us/
+  - https://eu.battle.net/forums/en/overwatch/
 
-## Build
+  
+## Framework
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+The app is developed with Angular 2.0 - https://angular.io/
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Functionallity
 
-## Running end-to-end tests
+Unregistered users can:
+  
+  - Visit the homepage at `/home`;
+  - Access the community panel with links to the forum/official blizzard forum/Overwatch subreddit;
+  - View the hero list at `/heroes`;
+  - View hero details by selecting it from the list and going to `/hero/details/:heroId`;
+  - Register themselves at 
+  
+Registered users can:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  - Do everything unregistered users can;
+  - Login from `/login`;
+  - Visit My Profile page and edit their details at `/myprofile`;
+  - Visit My Replays page and create, edit and delete replays at `/myreplays`, `/replay/edit/:id` and `replay/delete/:id`;
+  - Visit My Stats page and inspect ther performance stats from competitive play at `/mystats`;
+  
+Admin users can:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  - Do everything registered users can;
+  - Create, edit and delete heroes from the hero list at `/hero/add`,`/hero/edit/:id`,`/hero/delete/:id`;
+  - Edit and delete user profiles at `/user/edit/:id` and `/user/delete/:id`;
+  
